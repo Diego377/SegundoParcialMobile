@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch {
             val bookDao = AppRoomDatabase.getDatabase(applicationContext).bookDato()
             val repository = BookRepository(bookDao)
-            repository.insert(Book("the best seller: Android"))
+            repository.insert(Book("the best seller: Android", ""))
             val lista = repository.getListBooks()
             lista.forEach {
                 Log.d("DBTEST","Id book = ${it.id}, Title: ${it.title}")
